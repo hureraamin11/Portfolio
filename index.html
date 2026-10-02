@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abu Hurera | Computer Software Engineering Student | AI & Cybersecurity</title>
+<meta name="description" content="Portfolio of Abu Hurera, a Computer Software Engineering student at UET Peshawar (Abbottabad Campus) building software, exploring AI, and studying cybersecurity.">
+<meta property="og:title" content="Abu Hurera | Software Engineering Student">
+<meta property="og:description" content="Building software. Exploring AI. Securing the future.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0F1A; --panel:#121828; --panel2:#171E33; --line:#232C45;
+  --text:#EAEDF6; --text-dim:#9AA4C0; --text-faint:#5D6789;
+  --accent:#5B8DEF; --accent-soft:#5B8DEF22; --amber:#E8A860; --amber-soft:#E8A86022;
+  --radius:14px;
+  --font-head:'Space Grotesk',sans-serif; --font-body:'Inter',sans-serif;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  box-sizing:border-box;
+}
+:root[data-theme="light"]{
+  --bg:#F7F8FC; --panel:#FFFFFF; --panel2:#F0F2FA; --line:#DEE2EE;
+  --text:#161A28; --text-dim:#4B5470; --text-faint:#8890A8;
+  --accent:#3D6FD6; --accent-soft:#3D6FD614; --amber:#B5762A; --amber-soft:#B5762A14;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth; scroll-padding-top:70px;}
+body{background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.6; overflow-x:hidden; transition:background .3s,color .3s;}
+h1,h2,h3,h4{font-family:var(--font-head); letter-spacing:-0.01em;}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%;}
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+section{padding:100px 0;}
+@media(max-width:640px){section{padding:64px 0;}}
+
+/* focus */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;}
+
+/* Nav */
+header{position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); padding-top:env(safe-area-inset-top,0px);}
+.nav{display:flex; align-items:center; justify-content:space-between; height:64px;}
+.brand{font-family:var(--font-head); font-weight:700; font-size:1.05rem;}
+.brand span{color:var(--accent);}
+.nav-links{display:flex; gap:28px; list-style:none;}
+.nav-links a{font-size:.9rem; color:var(--text-dim); transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-right{display:flex; align-items:center; gap:14px;}
+.theme-btn{width:38px; height:38px; border-radius:10px; border:1px solid var(--line); background:var(--panel); color:var(--text); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1rem;}
+.hamburger{display:none; width:38px; height:38px; border-radius:10px; border:1px solid var(--line); background:var(--panel); color:var(--text); cursor:pointer;}
+.mobile-menu{display:none; flex-direction:column; gap:2px; padding:12px 24px 20px; border-bottom:1px solid var(--line); background:var(--bg);}
+.mobile-menu a{padding:12px 0; color:var(--text-dim); border-bottom:1px solid var(--line); font-size:.95rem;}
+.mobile-menu.open{display:flex;}
+@media(max-width:860px){.nav-links{display:none;} .hamburger{display:block;}}
+
+/* Hero */
+.hero{padding:96px 0 90px; position:relative;}
+.hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+.eyebrow{color:var(--accent); font-size:.85rem; font-weight:600; margin-bottom:16px;}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem); font-weight:700; line-height:1.12; margin-bottom:20px;}
+.hero p.lede{color:var(--text-dim); font-size:1.08rem; max-width:52ch; margin-bottom:28px;}
+.cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px;}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:10px; font-size:.92rem; font-weight:600; cursor:pointer; border:1px solid transparent; transition:transform .15s, background .2s, border-color .2s;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--accent); color:#fff;}
+.btn-ghost{background:transparent; border-color:var(--line); color:var(--text);}
+.social-row{display:flex; gap:16px;}
+.social-row a{font-size:.88rem; color:var(--text-dim); border-bottom:1px solid var(--line); padding-bottom:2px;}
+.social-row a:hover{color:var(--accent); border-color:var(--accent);}
+
+.node-art{aspect-ratio:1/1; width:100%;}
+@keyframes pulse{0%,100%{opacity:.35;} 50%{opacity:.9;}}
+.node-art circle.n{animation:pulse 3.4s ease-in-out infinite;}
+@media(prefers-reduced-motion:reduce){.node-art circle.n{animation:none;}}
+
+/* Section headers */
+.sec-head{margin-bottom:44px; max-width:60ch;}
+.sec-head .k{color:var(--accent); font-size:.82rem; font-weight:600; margin-bottom:8px;}
+.sec-head h2{font-size:clamp(1.5rem,3vw,2rem); margin-bottom:10px;}
+.sec-head p{color:var(--text-dim); font-size:.98rem;}
+
+/* About */
+.about-grid{display:grid; grid-template-columns:1.3fr .7fr; gap:48px;}
+@media(max-width:800px){.about-grid{grid-template-columns:1fr;}}
+.about-grid p{color:var(--text-dim); margin-bottom:16px;}
+.focus-list{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;}
+.tag{font-size:.8rem; padding:6px 12px; border-radius:100px; background:var(--panel2); border:1px solid var(--line); color:var(--text-dim);}
+.info-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px;}
+.info-card dt{font-size:.75rem; color:var(--text-faint); margin-top:14px;}
+.info-card dt:first-child{margin-top:0;}
+.info-card dd{font-size:.95rem; margin-top:2px;}
+
+/* Timeline (education) */
+.timeline{border-left:2px solid var(--line); padding-left:28px; position:relative;}
+.timeline-item{position:relative; padding-bottom:4px;}
+.timeline-item::before{content:''; position:absolute; left:-33.5px; top:4px; width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft);}
+.timeline-item .yr{color:var(--accent); font-size:.85rem; font-weight:600;}
+.timeline-item h3{margin:6px 0 4px; font-size:1.15rem;}
+.timeline-item p{color:var(--text-dim); font-size:.92rem;}
+
+/* Skills */
+.skill-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px;}
+.skill-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px;}
+.skill-card h3{font-size:1rem; margin-bottom:14px; display:flex; align-items:center; gap:8px;}
+.skill-card ul{list-style:none; display:flex; flex-wrap:wrap; gap:8px;}
+.skill-card li{font-size:.82rem; padding:6px 11px; border-radius:8px; background:var(--panel2); color:var(--text-dim); border:1px solid var(--line);}
+
+/* Featured project */
+.project-card{background:var(--panel); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
+.project-top{padding:34px 34px 0;}
+.badge-ribbon{display:inline-flex; align-items:center; gap:8px; background:var(--amber-soft); color:var(--amber); border:1px solid var(--amber); padding:6px 14px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:18px;}
+.project-card h3{font-size:1.6rem; margin-bottom:6px;}
+.project-alias{color:var(--text-faint); font-size:.88rem; margin-bottom:16px;}
+.project-card p.desc{color:var(--text-dim); max-width:70ch; margin-bottom:20px;}
+.project-img{margin:0 34px 0; height:210px; border-radius:12px; background:
+  repeating-linear-gradient(115deg, var(--panel2) 0 2px, transparent 2px 26px),
+  linear-gradient(135deg, var(--accent-soft), transparent 60%); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center; color:var(--text-faint); font-size:.85rem;}
+.tech-row{display:flex; flex-wrap:wrap; gap:8px; padding:24px 34px 0;}
+.project-actions{display:flex; gap:12px; padding:24px 34px 34px; flex-wrap:wrap;}
+
+/* Certifications / achievements */
+.cert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px;}
+.cert-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:22px;}
+.cert-card .org{color:var(--text-faint); font-size:.8rem; margin-bottom:6px;}
+.cert-card h3{font-size:1.05rem; margin-bottom:10px;}
+.progress-track{height:6px; border-radius:4px; background:var(--panel2); overflow:hidden; margin:10px 0 6px;}
+.progress-fill{height:100%; background:var(--accent); border-radius:4px;}
+.cert-card .note{font-size:.82rem; color:var(--text-dim);}
+
+.ach-row{display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-bottom:1px solid var(--line);}
+.ach-row:last-child{border-bottom:none;}
+.ach-icon{font-size:1.4rem;}
+.ach-row h4{font-size:1rem; margin-bottom:3px;}
+.ach-row p{color:var(--text-dim); font-size:.9rem;}
+
+/* exploring */
+.explore-chips{display:flex; flex-wrap:wrap; gap:10px;}
+.explore-chips span{padding:9px 16px; border-radius:10px; background:var(--panel); border:1px solid var(--line); font-size:.88rem; color:var(--text-dim);}
+
+/* medtech */
+.medtech-card{background:linear-gradient(160deg, var(--panel), var(--panel2)); border:1px solid var(--line); border-radius:18px; padding:40px; text-align:left;}
+.medtech-card .k{color:var(--accent); font-size:.82rem; font-weight:600;}
+.medtech-card h2{font-size:1.7rem; margin:10px 0 14px;}
+.medtech-card p{color:var(--text-dim); max-width:64ch;}
+
+/* Contact */
+.contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:48px;}
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr;}}
+.contact-info a{display:block; color:var(--text-dim); margin-bottom:12px; font-size:.95rem;}
+.contact-info a:hover{color:var(--accent);}
+form{display:flex; flex-direction:column; gap:14px;}
+label{font-size:.82rem; color:var(--text-faint); margin-bottom:6px; display:block;}
+input,textarea{width:100%; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px 14px; color:var(--text); font-family:inherit; font-size:.95rem;}
+textarea{min-height:120px; resize:vertical;}
+.err{color:#E36868; font-size:.78rem; min-height:16px;}
+.form-note{font-size:.8rem; color:var(--text-faint); margin-top:4px;}
+
+footer{border-top:1px solid var(--line); padding:40px 0; padding-bottom:calc(40px + env(safe-area-inset-bottom,0px));}
+.foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+.foot-links{display:flex; gap:18px;}
+.foot-links a{color:var(--text-dim); font-size:.88rem;}
+.foot-links a:hover{color:var(--accent);}
+.foot-copy{color:var(--text-faint); font-size:.8rem;}
+
+.reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1; transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1; transform:none; transition:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Abu <span>Hurera</span></div>
+    <nav><ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#medtech">MedTech Nexus</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark or light theme">🌙</button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a>
+    <a href="#projects">Projects</a><a href="#certifications">Certifications</a>
+    <a href="#achievements">Achievements</a><a href="#medtech">MedTech Nexus</a><a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Computer Software Engineering Student · UET Peshawar, Abbottabad Campus</div>
+        <h1>Building software. Exploring AI. Securing the future.</h1>
+        <p class="lede">I'm Abu Hurera, an undergraduate Software Engineering student (2025–2029) developing skills across software engineering, AI, and cybersecurity — one project at a time.</p>
+        <div class="cta-row">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+        <div class="social-row">
+          <a href="https://github.com/hureraamin11" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/abu-hurera-medtech-nexus/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+      <svg class="node-art" viewBox="0 0 320 320" role="img" aria-label="Abstract network of connected nodes">
+        <g stroke="var(--line)" stroke-width="1.4" fill="none">
+          <line x1="60" y1="70" x2="160" y2="150"/><line x1="160" y1="150" x2="255" y2="90"/>
+          <line x1="160" y1="150" x2="90" y2="240"/><line x1="160" y1="150" x2="240" y2="230"/>
+          <line x1="90" y1="240" x2="240" y2="230"/><line x1="255" y1="90" x2="240" y2="230"/>
+          <line x1="60" y1="70" x2="90" y2="240"/>
+        </g>
+        <circle class="n" cx="60" cy="70" r="6" fill="var(--accent)"/>
+        <circle class="n" cx="160" cy="150" r="9" fill="var(--accent)" style="animation-delay:.4s"/>
+        <circle class="n" cx="255" cy="90" r="5" fill="var(--amber)" style="animation-delay:.8s"/>
+        <circle class="n" cx="90" cy="240" r="6" fill="var(--accent)" style="animation-delay:1.2s"/>
+        <circle class="n" cx="240" cy="230" r="7" fill="var(--amber)" style="animation-delay:1.6s"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="k">About</div><h2>Learning in public, building for real</h2></div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>I'm pursuing a degree in Computer Software Engineering at UET Peshawar, Abbottabad Campus (2025–2029). Alongside coursework, I'm developing practical skills in software engineering, artificial intelligence, and cybersecurity through hands-on projects.</p>
+          <p>I'm exploring machine learning, agentic AI, and retrieval-augmented generation, working with APIs and automation tools like n8n, and building comfort with Docker and Linux for real development workflows. My approach is project-driven: learn a concept, then build something with it.</p>
+          <div class="focus-list">
+            <span class="tag">Software Engineering</span><span class="tag">AI &amp; ML</span>
+            <span class="tag">Agentic AI</span><span class="tag">Cybersecurity</span>
+            <span class="tag">SaaS &amp; APIs</span><span class="tag">RAG</span>
+            <span class="tag">Voice Agents</span><span class="tag">Automation</span>
+            <span class="tag">Docker &amp; Linux</span><span class="tag">DSA</span>
+          </div>
+        </div>
+        <div class="info-card reveal">
+          <dl>
+            <dt>Studying</dt><dd>Computer Software Engineering</dd>
+            <dt>University</dt><dd>UET Peshawar — Abbottabad Campus</dd>
+            <dt>Batch</dt><dd>2025–2029</dd>
+            <dt>Location</dt><dd>Abbottabad, Khyber Pakhtunkhwa, Pakistan</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="k">Education</div><h2>Academic path</h2></div>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="yr">2025 — 2029</div>
+          <h3>UET Peshawar, Abbottabad Campus</h3>
+          <p>Bachelor's in Computer Software Engineering — undergraduate coursework in progress.</p>
+        </div>
+        <!--
+          EDUCATION — ADD MORE ENTRIES HERE
+          Paste another timeline item here once you have details to add, e.g.:
+          <div class="timeline-item">
+            <div class="yr">Year</div>
+            <h3>School / Program name</h3>
+            <p>Details</p>
+          </div>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="k">Skills</div><h2>Technologies I work with</h2><p>Areas I'm actively developing, from core programming to emerging technologies.</p></div>
+      <div class="skill-grid reveal">
+        <div class="skill-card"><h3>💻 Programming</h3><ul><li>C++</li><li>Java</li><li>Python</li></ul></div>
+        <div class="skill-card"><h3>🧩 Software Engineering</h3><ul><li>SDLC</li><li>OOP</li><li>Data Structures &amp; Algorithms</li><li>SE Principles</li></ul></div>
+        <div class="skill-card"><h3>🤖 AI &amp; Emerging Tech</h3><ul><li>Artificial Intelligence</li><li>Machine Learning</li><li>Agentic AI</li><li>Generative AI</li><li>Prompt Engineering</li><li>RAG</li><li>Voice Agents</li></ul></div>
+        <div class="skill-card"><h3>🛡️ Cybersecurity</h3><ul><li>Fundamentals</li><li>Threats</li><li>Vulnerabilities</li><li>Security Concepts</li></ul></div>
+        <div class="skill-card"><h3>🛠️ Development &amp; Tools</h3><ul><li>Git</li><li>GitHub</li><li>Linux</li><li>Docker</li><li>APIs</li><li>n8n</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="k">Featured Project</div><h2>Project Nexus</h2></div>
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="badge-ribbon">🏆 1st Place — Software Engineering Department</div>
+          <h3>IoT-Based Smart Home Automation System</h3>
+          <div class="project-alias">Also known as: Project Nexus</div>
+          <p class="desc">An IoT-based smart home automation system combining sensing, access control, and alerting into one connected setup — built around an Arduino Mega 2560 with an ESP-01/ESP8266 module for connectivity, RFID-based access, environmental and safety sensing, and an LCD status display.</p>
+        </div>
+        <!--
+          PROJECT NEXUS — IMAGE
+          Paste your image tag here, e.g.:
+          <img src="your-image-url-or-path.jpg" alt="Project Nexus hardware setup" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+        -->
+        <div class="project-img" id="project-nexus-image">Project image goes here</div>
+
+        <!--
+          PROJECT NEXUS — DEMO VIDEO
+          Paste your video embed here, e.g. a local file:
+          <video controls style="width:100%;height:100%;border-radius:12px;"><source src="your-video-url-or-path.mp4" type="video/mp4"></video>
+          Or a hosted embed (YouTube/Vimeo) as an <iframe>.
+        -->
+        <div class="project-img" id="project-nexus-video" style="margin-top:16px;">Project video goes here</div>
+        <div class="tech-row">
+          <span class="tag">Arduino Mega 2560</span><span class="tag">ESP-01 / ESP8266</span>
+          <span class="tag">RC522 RFID</span><span class="tag">Ultrasonic Sensor</span>
+          <span class="tag">Flame Sensor</span><span class="tag">DHT11</span>
+          <span class="tag">LDR</span><span class="tag">Servo Motor</span>
+          <span class="tag">16x2 I2C LCD</span><span class="tag">2-Channel Relay</span>
+          <span class="tag">Buzzer</span>
+        </div>
+        <div class="project-actions">
+          <button class="btn btn-ghost" disabled title="Repository not yet linked">GitHub (coming soon)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="k">Certifications &amp; Learning</div><h2>Learning journey</h2></div>
+      <div class="cert-grid reveal">
+        <div class="cert-card">
+          <div class="org">Google · via Coursera</div>
+          <h3>Google Cybersecurity Certificate</h3>
+          <div class="progress-track"><div class="progress-fill" style="width:55.5%"></div></div>
+          <div class="note">5 of 9 modules completed — latest: Assets, Threats, and Vulnerabilities</div>
+          <!--
+            CERTIFICATE — GOOGLE CYBERSECURITY
+            Paste a link or image here once you have proof, e.g.:
+            <a href="your-certificate-link" target="_blank" rel="noopener" style="font-size:.82rem;color:var(--accent);display:inline-block;margin-top:10px;">View certificate ↗</a>
+          -->
+        </div>
+        <div class="cert-card">
+          <div class="org">IBM · via Coursera</div>
+          <h3>Generative AI: Prompt Engineering Basics</h3>
+          <div class="note">Completed</div>
+          <!--
+            CERTIFICATE — IBM GENERATIVE AI
+            Paste a link or image here once you have proof, e.g.:
+            <a href="your-certificate-link" target="_blank" rel="noopener" style="font-size:.82rem;color:var(--accent);display:inline-block;margin-top:10px;">View certificate ↗</a>
+          -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="k">Achievements</div><h2>Milestones so far</h2></div>
+      <div class="reveal">
+        <div class="ach-row"><div class="ach-icon">🏆</div><div><h4>1st Place — Software Engineering Department</h4><p>IoT-Based Smart Home Automation System / Project Nexus</p></div></div>
+        <div class="ach-row"><div class="ach-icon">🔐</div><div><h4>Google Cybersecurity learning journey</h4><p>5 of 9 modules completed via Coursera</p></div></div>
+        <div class="ach-row"><div class="ach-icon">✨</div><div><h4>IBM Generative AI milestone</h4><p>Completed Generative AI: Prompt Engineering Basics</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="exploring">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="k">Currently Exploring</div><h2>What I'm learning right now</h2></div>
+      <div class="explore-chips reveal">
+        <span>Agentic AI</span><span>AI-powered SaaS</span><span>RAG</span><span>Voice Agents</span>
+        <span>APIs</span><span>n8n</span><span>Docker</span><span>Cybersecurity</span>
+        <span>Software Engineering</span><span>Artificial Intelligence</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="medtech">
+    <div class="wrap">
+      <div class="medtech-card reveal">
+        <div class="k">Venture</div>
+        <h2>MedTech Nexus</h2>
+        <p>MedTech Nexus is Abu Hurera's entrepreneurial venture at the intersection of medicine and technology. As Founder, the current focus is on shaping the vision and building the technical foundation — more details to follow as the venture develops.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal"><div class="k">Contact</div><h2>Let's build something meaningful</h2></div>
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <a href="mailto:hureraamin11@gmail.com">✉ hureraamin11@gmail.com</a>
+          <a href="https://github.com/hureraamin11" target="_blank" rel="noopener">⌥ github.com/hureraamin11</a>
+          <a href="https://www.linkedin.com/in/abu-hurera-medtech-nexus/" target="_blank" rel="noopener">in linkedin.com/in/abu-hurera-medtech-nexus</a>
+        </div>
+        <form id="contactForm" novalidate>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <div class="err" id="nameErr"></div>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <div class="err" id="emailErr"></div>
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <div class="err" id="msgErr"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div class="form-note" id="formNote">This form isn't connected to an email service yet — please reach out directly via the email above in the meantime.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>
+      <div class="brand">Abu Hurera</div>
+      <div class="foot-copy">Computer Software Engineering | AI &amp; Cybersecurity</div>
+    </div>
+    <div class="foot-links">
+      <a href="https://github.com/hureraamin11" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/abu-hurera-medtech-nexus/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:hureraamin11@gmail.com">Email</a>
+    </div>
+  </div>
+  <div class="wrap"><p class="foot-copy" style="margin-top:16px;">© 2026 Abu Hurera. All rights reserved.</p></div>
+</footer>
+
+<script>
+// Theme handling
+const root = document.documentElement;
+const themeBtn = document.getElementById('themeBtn');
+function applyTheme(t){ root.setAttribute('data-theme', t); themeBtn.textContent = t === 'dark' ? '🌙' : '☀️'; try{localStorage.setItem('theme', t);}catch(e){} }
+(function initTheme(){
+  let saved = null;
+  try{ saved = localStorage.getItem('theme'); }catch(e){}
+  const preferred = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  applyTheme(preferred);
+})();
+themeBtn.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+// Mobile menu
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburgerBtn.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburgerBtn.setAttribute('aria-expanded', open);
+  hamburgerBtn.textContent = open ? '✕' : '☰';
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.remove('open'); hamburgerBtn.textContent = '☰'; hamburgerBtn.setAttribute('aria-expanded', false);
+}));
+
+// Scroll reveal
+try{
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}catch(e){ document.querySelectorAll('.reveal').forEach(el => el.classList.add('in')); }
+
+// Contact form validation (no backend configured)
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let valid = true;
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const msg = document.getElementById('message');
+  const nameErr = document.getElementById('nameErr');
+  const emailErr = document.getElementById('emailErr');
+  const msgErr = document.getElementById('msgErr');
+  nameErr.textContent = emailErr.textContent = msgErr.textContent = '';
+  if(!name.value.trim()){ nameErr.textContent = 'Please enter your name.'; valid = false; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){ emailErr.textContent = 'Please enter a valid email.'; valid = false; }
+  if(!msg.value.trim()){ msgErr.textContent = 'Please enter a message.'; valid = false; }
+  const note = document.getElementById('formNote');
+  if(valid){ note.textContent = 'Thanks — this form isn\'t wired to an email service yet, so please email hureraamin11@gmail.com directly for now.'; }
+});
+</script>
+</body>
+</html>
